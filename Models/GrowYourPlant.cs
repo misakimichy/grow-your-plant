@@ -10,6 +10,7 @@ namespace GrowPlant.Models
         public int WaterLevel { get; set; }
         public int Happiness { get; set; }
         public bool IsAlive { get; set; }
+        public int RandomNum;
 
         public Plant ()
         {
@@ -18,6 +19,7 @@ namespace GrowPlant.Models
             WaterLevel = 3;
             Happiness = 0;
             IsAlive = true;
+            RandomNum = 0;
         }
 
         public void Water()
@@ -58,6 +60,30 @@ namespace GrowPlant.Models
         public void Rabbit()
         {
             IsAlive = false;
+        }
+
+        // Randomize Windstorm, WeedGrow, Rabiit events
+        public void RandomizeEvent()
+        {
+            Random randomNum = new Random();
+            RandomNum = randomNum.Next(0, 4);
+        }
+
+        public void CheckAlive()
+        {
+            if(WaterLevel < 0 || WaterLevel > 10 || Happiness < 0)
+            {
+                IsAlive = false;
+            }
+        }
+        public void Reset()
+        {
+            Name = "";
+            Height = 0;
+            WaterLevel = 3;
+            Happiness = 0;
+            IsAlive = true;
+            RandomNum = 0;
         }
     }
 }

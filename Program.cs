@@ -46,6 +46,33 @@ namespace GrowPlant
                     HandleEvent();
                     break;
             }
+            plant.RandomizeEvent();
+        }
+
+        public static void UpdateStatus(Plant plant)
+        {
+            plant.CheckAlive();
+            if(plant.IsAlive)
+            {
+                //DisplayStatus();
+                RenderOption();
+            }
+            else
+            {
+                Console.WriteLine("GAME OVER!!");
+                Console.WriteLine("Sorry, " + plant.Name + " is died...");
+                Console.WriteLine("Play again? (Y/N)");
+                string userInput = Console.ReadLine().ToUpper();
+                if(userInput == "Y")
+                {
+                    plant.Reset();
+                    Main();
+                }
+                else
+                {
+                    Console.WriteLine("See you again!");
+                }
+            }
         }
     }
 }
