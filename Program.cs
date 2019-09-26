@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic;
+
 using GrowPlant.Models;
 
 // Use Singleton to avoid static variables.
@@ -83,7 +83,7 @@ namespace GrowPlant
         public static void UpdateState()
         {
             Console.WriteLine("-----------------------------------------------");
-            Console.WriteLine($"{plant.Name}'s current status: \n{plant.Name} is {plant.Height} tall. \nWater level is {plant.WaterLevel}. \nHappiness is {plant.Happiness}.\n");
+            Console.WriteLine($"{plant.Name}'s current status: \n{plant.Name} is {plant.Height} inches. \nWater level is {plant.WaterLevel}. \nHappiness is {plant.Happiness}.\n");
         }
     }
 }
