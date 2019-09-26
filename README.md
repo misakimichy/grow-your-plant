@@ -3,14 +3,18 @@
 #### _C#, .NET: Grow Your Own Plant 9/26/2019_
 
 ## Description
-Create a console application to grow your own plant. Each round, the plant should grow a certain amount (or fail to grow) based on the actions the user takes.
+Create a console application to grow your own plant. Each round, the plant should grow a certain amount (or fail to grow).
 
 ## Application should have:
 - `Plant` class has methods for allowing the plant to grow.
 
-- There are `Water()`, `Feed()` and `GiveSunshine()` methods
+- There are `Water()`, `Feed()` and `GiveSunshine()` methods to grow and make your plant happy.
 
-- There are methods to cause trouble for you plant too. `Windstorm()` and `SlugBite()`.
+- There are `Windstorm()`, `WeedsGrow()` and `Rabbit()` methods, which cause a trouble for your plant.
+
+- A trouble event happens randomly everytime you take care of your plant.
+
+- It's sad but `Rabbit()` method eats your plant...🐰
 
 ## Setup/Installation Requirements
 
