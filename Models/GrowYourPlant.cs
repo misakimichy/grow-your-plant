@@ -4,10 +4,11 @@ namespace GrowPlant.Models
 {
     public class Plant
     {
+        // Getting idea from Tamagotchi
         public string Name { get; set; }
         public int Height { get; set;}
         public int WaterLevel { get; set; }
-        public int AttentionLevel { get; set; }
+        public int Happiness { get; set; }
         public bool IsAlive { get; set; }
 
         public Plant (string name, int height, int waterLevel, bool isAlive)
@@ -15,7 +16,7 @@ namespace GrowPlant.Models
             Name = "";
             Height = 0;
             WaterLevel = 3;
-            AttentionLevel = 0;
+            Happiness = 0;
             IsAlive = true;
         }
 
@@ -27,14 +28,36 @@ namespace GrowPlant.Models
 
         public void Feed()
         {
-            AttentionLevel += 1;
+            Happiness += 1;
         }
 
         public void GiveSunshine()
         {
-            Height += 1;
+            Height += 2;
+            WaterLevel -= 2;
+            Happiness += 2;
+        }
+
+        public void CleanWeeds()
+        {
             WaterLevel -= 1;
-            AttentionLevel += 2;
+            Happiness += 2;
+        }
+
+        public void Windstorm()
+        {
+            Happiness -= 2;
+            WaterLevel += 3;
+        }
+
+        public void WeedGrow()
+        {
+            Happiness -= 2;
+        }
+
+        public void Rabbit()
+        {
+            IsAlive = false;
         }
     }
 }
