@@ -11,7 +11,7 @@ namespace GrowPlant.Models
         public int Happiness { get; set; }
         public bool IsAlive { get; set; }
 
-        public Plant (string name, int height, int waterLevel, bool isAlive)
+        public Plant ()
         {
             Name = "";
             Height = 0;
