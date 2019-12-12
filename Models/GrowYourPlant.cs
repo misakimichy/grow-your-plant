@@ -11,8 +11,8 @@ namespace GrowPlant.Models
         public int WaterLevel { get; set; }
         public int Happiness { get; set; }
         public bool IsAlive { get; set; }
-        private Random _randomNum;
-        private List<Action> _trouble;
+        public Random RandomNum { get; set; }
+        public List<Action> Trouble { get; set; }
 
         public Plant ()
         {
@@ -21,8 +21,8 @@ namespace GrowPlant.Models
             WaterLevel = 3;
             Happiness = 0;
             IsAlive = true;
-            _randomNum = new Random();
-            _trouble = new List<Action> () { Windstorm, WeedsGrow, Rabbit };
+            RandomNum = new Random();
+            Trouble = new List<Action> () { NoSun, Windstorm, WeedsGrow, EatPlant };
 
         }
 
@@ -50,6 +50,13 @@ namespace GrowPlant.Models
             Happiness += 2;
         }
 
+        public void NoSun()
+        {
+            Console.WriteLine($"\nIt's been cloudy. {Name} seems sad.\n");
+            Happiness -= 1;
+            WaterLevel += 1;
+        }
+
         public void Windstorm()
         {
             Console.WriteLine("\nA crazy rainstorm flooded the ground!\n");
@@ -59,26 +66,26 @@ namespace GrowPlant.Models
 
         public void WeedsGrow()
         {
-            Console.WriteLine($"\nWeeds are growing like crazy! You need to clean up for {Name}.\n");
+            Console.WriteLine($"\nWeeds are growing like crazy! You need to clean them up for {Name}.\n");
             Happiness -= 2;
         }
 
-        public void Rabbit()
+        public void EatPlant()
         {
             Console.WriteLine($"\nOops, it looks like a rabbit ate {Name}... Seriously?\n");
             IsAlive = false;
         }
 
-        // Randomize Windstorm, WeedsGrow, Rabiit events
+        // Randomize NoSun, Windstorm, WeedsGrow, EatPlant events
         public void RandomizeEvent()
         {
-            int randomNumber = _randomNum.Next(0, 3);
-            _trouble[randomNumber]();
+            int randomNumber = RandomNum.Next(0, 4);
+            Trouble[randomNumber]();
         }
 
         public void CheckAlive()
         {
-            if(WaterLevel < 0 || WaterLevel > 10 || Happiness < 0)
+            if (WaterLevel < 0 || Happiness < 0 || WaterLevel > 10)
             {
                 IsAlive = false;
             }

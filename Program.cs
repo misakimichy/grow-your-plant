@@ -1,5 +1,4 @@
 using System;
-
 using GrowPlant.Models;
 
 // Use Singleton to avoid static variables.
@@ -24,7 +23,7 @@ namespace GrowPlant
         {
             Console.WriteLine("-----------------------------------------------");
             Console.WriteLine($"How do you want to take care of {plant.Name}? \n1: water | 2: feed | 3: give sunshine | 4. clean weeds");
-            Console.WriteLine("\nI'm going to (option: 1 - 4).\n");
+            Console.WriteLine("\nI'm going to... (option: 1 - 4).\n");
             HandleEvent();
         }
 
@@ -66,7 +65,7 @@ namespace GrowPlant
             else
             {
                 Console.WriteLine("GAME OVER!!");
-                Console.WriteLine($"Sorry, {plant.Name} is died...");
+                Console.WriteLine($"Sorry, {plant.Name} died...");
                 Console.WriteLine("Play again? (Y/N)");
                 string userInput = Console.ReadLine().ToUpper();
                 if(userInput == "Y")
@@ -83,7 +82,7 @@ namespace GrowPlant
         public static void UpdateState()
         {
             Console.WriteLine("-----------------------------------------------");
-            Console.WriteLine($"{plant.Name}'s current status: \n{plant.Name} is {plant.Height} inches. \nWater level is {plant.WaterLevel}. \nHappiness is {plant.Happiness}.\n");
+            Console.WriteLine($"{plant.Name}'s current status: \nHeight: {plant.Height} \nWater level: {plant.WaterLevel} \nHappiness level: {plant.Happiness}.\n");
         }
     }
 }
