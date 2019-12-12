@@ -10,11 +10,11 @@ Create a console application to grow your own plant. Each round, the plant shoul
 
 - There are `Water()`, `Feed()` and `GiveSunshine()` methods to grow and make your plant happy.
 
-- There are `Windstorm()`, `WeedsGrow()` and `Rabbit()` methods, which cause a trouble for your plant.
+- There are `NoSun()`, `Windstorm()`, `WeedsGrow()` and `EatPlant()` methods, which cause a trouble for your plant.
 
-- A trouble event happens randomly everytime you take care of your plant.
+- A trouble event happens randomly but every time you take care of your plant.
 
-- It's sad but `Rabbit()` method eats your plant...🐰
+- It's sad but when `EatPlant()` method is called, the game will be over.
 
 ## Setup/Installation Requirements
 
